@@ -13,46 +13,40 @@ public class CellPhone {
         this.carrier = "";
         this.phoneNumber = "";
         this.owner = "";
-
-    }
-    public long getSerialNumber() {
-        return serialNumber;
-    }
-    public String getModel() {
-        return model;
-    }
-    public String getCarrier() {
-        return carrier;
-    }
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-    public String getOwner() {
-        return owner;
     }
 
-    public void setSerialNumber(long serialNumber) {
+    public CellPhone(long serialNumber, String model, String carrier, String phoneNumber, String owner) {
         this.serialNumber = serialNumber;
-    }
-
-    public void setModel(String model) {
         this.model = model;
-    }
-
-    public void setCarrier(String carrier) {
         this.carrier = carrier;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public void setOwner(String owner) {
         this.owner = owner;
     }
 
+
+    public long getSerialNumber() {return serialNumber;}
+    public void setSerialNumber(long serialNumber) {this.serialNumber = serialNumber;}
+
+    public String getModel() {return model;}
+    public void setModel(String model) {this.model = model;}
+
+    public String getCarrier() {return carrier;}
+    public void setCarrier(String carrier) {this.carrier = carrier;}
+
+    public String getPhoneNumber() {return phoneNumber;}
+    public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
+
+    public String getOwner() {return owner;}
+    public void setOwner(String owner) {this.owner = owner;}
+
+
     public void dial(String number) {
         System.out.println(this.owner + "'s phone is calling " + number);
+    }
+    public void dial(CellPhone phone) {
+        String targetNumber = phone.getPhoneNumber();
+        System.out.println(this.owner + " is using easy-dial to call " + phone.getOwner());
+        this.dial(targetNumber);
     }
 
 }
