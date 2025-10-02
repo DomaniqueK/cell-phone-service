@@ -44,9 +44,9 @@ public class CellPhone {
         System.out.println(this.owner + "'s phone is calling " + number);
     }
     public void dial(CellPhone phone) {
-        String targetNumber = phone.getPhoneNumber();
+        String dialNumber = phone.getPhoneNumber();
         System.out.println(this.owner + " is using easy-dial to call " + phone.getOwner());
-        this.dial(targetNumber);
+        this.dial(dialNumber);
     }
 
 }
